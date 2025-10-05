@@ -82,8 +82,7 @@ reg [DATA_WIDTH-1:0] data_ram [0:MEM_SIZE-1];
 end
 
 
-assign rd_data_mem[31:0] =((funct == 3'b010) ? (data_ram[wr_addr[DATA_WIDTH-1:2] % MEM_SIZE]) : (((wr_addr%4 == 0) ? (data_ram[wr_addr[DATA_WIDTH-1:2] % MEM_SIZE] & {{24{1'b0}},{8{1'b1}}}) : ((wr_addr%4 == 1) ? (data_ram[wr_addr[DATA_WIDTH-1:2] % MEM_SIZE] & {{16{1'b0}},{8{1'b1}},{8{1'b0}}})>> 8 : ((wr_addr%4 == 2) ? (data_ram[wr_addr[DATA_WIDTH-1:2] % MEM_SIZE] & {{8{1'b0}},{8{1'b1}},{16{1'b0}}}) >> 16 : (data_ram[wr_addr[DATA_WIDTH-1:2] % MEM_SIZE] & {{8{1'b1}},{24{1'b0}}}) >> 24)))));
-
+assign rd_data_mem = data_ram[wr_addr[DATA_WIDTH-1:2]];
 // synchronous write logic
 
 
