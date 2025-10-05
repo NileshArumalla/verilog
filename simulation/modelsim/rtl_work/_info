@@ -1,0 +1,443 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/simulation/modelsim
+vadder
+Z1 !s110 1759688780
+!i10b 1
+!s100 jXE67fZjiCj2W4l?`i:H?0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ILFV1fOb_@oQ^YGKQSEk2h0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1759295902
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/adder.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/adder.v
+!i122 13
+L0 4 8
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1759688780.000000
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/adder.v|
+!i113 1
+Z7 o-vlog01compat -work work
+Z8 !s92 -vlog01compat -work work +incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components
+Z9 tCvgOpt 0
+valu
+R1
+!i10b 1
+!s100 2@OU>hcddhZ8YC;;e?IYZ2
+R2
+I`1ZX3kUhMn8[D]FgBgh@I0
+R3
+R0
+w1759674835
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu.v
+!i122 12
+L0 4 48
+R5
+r1
+!s85 0
+31
+Z10 !s108 1759688779.000000
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu.v|
+!i113 1
+R7
+R8
+R9
+valu_decoder
+Z11 !s110 1759688779
+!i10b 1
+!s100 F;X>z9Q_7K[4dTbz5fgKj2
+R2
+IO1RXE9B9VlPlQ[0z_<5Of3
+R3
+R0
+w1759684338
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v
+!i122 11
+L0 4 49
+R5
+r1
+!s85 0
+31
+R10
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v|
+!i113 1
+R7
+R8
+R9
+vcontroller
+R11
+!i10b 1
+!s100 HkJ1mAz>IL?nGPVPN3kQ23
+R2
+I_km:jTfYJFW<hWzze[e7d0
+R3
+R0
+w1759654309
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v
+!i122 10
+L0 4 28
+R5
+r1
+!s85 0
+31
+R10
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v|
+!i113 1
+R7
+R8
+R9
+vdata_mem
+Z12 !s110 1759688777
+!i10b 1
+!s100 c;4d[OFEC5G7Bjz;eA4Dc1
+R2
+IfRHo]>YGfGENMc1^C85:j1
+R3
+R0
+w1759660120
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/data_mem.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/data_mem.v
+!i122 2
+L0 4 112
+R5
+r1
+!s85 0
+31
+Z13 !s108 1759688777.000000
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/data_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/data_mem.v|
+!i113 1
+R7
+Z14 !s92 -vlog01compat -work work +incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code
+R9
+vdatapath
+R11
+!i10b 1
+!s100 ]k=e[PBR;?W::^5O4lLdG3
+R2
+IXJZ:8zQMCe^7C@AEoc_6V1
+R3
+R0
+w1759668329
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v
+!i122 9
+L0 4 55
+R5
+r1
+!s85 0
+31
+R10
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v|
+!i113 1
+R7
+R8
+R9
+vimm_extend
+R11
+!i10b 1
+!s100 KCY0HN8a_SDDT@o^3341e2
+R2
+IGR78MaMFXN2IdOz?C`@WS0
+R3
+R0
+R4
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/imm_extend.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/imm_extend.v
+!i122 8
+L0 3 21
+R5
+r1
+!s85 0
+31
+Z15 !s108 1759688778.000000
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/imm_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/imm_extend.v|
+!i113 1
+R7
+R8
+R9
+vinstr_mem
+R1
+!i10b 1
+!s100 _2]cbk6YNQ9ECcKm2oV;A0
+R2
+I13^_48[dbBG09BlH@m:Q<0
+R3
+R0
+w1759668204
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v
+!i122 16
+L0 4 18
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v|
+!i113 1
+R7
+R14
+R9
+vload_extend
+R1
+!i10b 1
+!s100 8UF<URc`]E^I85F7:Z=IJ3
+R2
+IO8FmFFXKNK[Mh`_d=_9oX3
+R3
+R0
+w1759688653
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/load_extend.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/load_extend.v
+!i122 15
+L0 4 20
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/load_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/load_extend.v|
+!i113 1
+R7
+R8
+R9
+vmain_decoder
+Z16 !s110 1759688778
+!i10b 1
+!s100 98AzP_C;^CMH<nmE9:2MA3
+R2
+Ib[3>`bS;978LN7A:4TCfR0
+R3
+R0
+w1759688494
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v
+!i122 7
+L0 4 62
+R5
+r1
+!s85 0
+31
+R15
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v|
+!i113 1
+R7
+R8
+R9
+vmux2
+R16
+!i10b 1
+!s100 O<Ld`3jD6QL?6PIEe_QAk1
+R2
+IR79;ONg3hZ@9k`oc5`haB0
+R3
+R0
+R4
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux2.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux2.v
+!i122 6
+Z17 L0 4 9
+R5
+r1
+!s85 0
+31
+R15
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux2.v|
+!i113 1
+R7
+R8
+R9
+vmux4
+R16
+!i10b 1
+!s100 V4YdM>hK^I8CMb?cH8Cej3
+R2
+IJ>>WakP>JfiAYj6HF]2o>2
+R3
+R0
+R4
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v
+!i122 5
+R17
+R5
+r1
+!s85 0
+31
+R15
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v|
+!i113 1
+R7
+R8
+R9
+vreg_file
+R16
+!i10b 1
+!s100 z2]InGk0[gjzdlc7_WWYI1
+R2
+IjEHc7<6UodFl;JE[755Fm2
+R3
+R0
+R4
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reg_file.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reg_file.v
+!i122 4
+L0 8 27
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reg_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reg_file.v|
+!i113 1
+R7
+R8
+R9
+vreset_ff
+R12
+!i10b 1
+!s100 c1I5T0L8]]ZK0dn2hg0_F0
+R2
+IRdXCaLT`2^CSo3N[aC`oB0
+R3
+R0
+R4
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reset_ff.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reset_ff.v
+!i122 3
+L0 4 12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reset_ff.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reset_ff.v|
+!i113 1
+R7
+R8
+R9
+vriscv_cpu
+R12
+!i10b 1
+!s100 2fWV50h88cKWORBYA8^4`3
+R2
+IlQ<^dZ93^J5>ncQI^bM6O1
+R3
+R0
+w1759605382
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v
+!i122 1
+L0 4 26
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v|
+!i113 1
+R7
+R14
+R9
+vstore_extend
+R1
+!i10b 1
+!s100 MYC7b]zoCbHmU@=<CNb?12
+R2
+IPbK8k;73[f4@?>a?zU9Ij0
+R3
+R0
+w1759688722
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/store_extend.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/store_extend.v
+!i122 14
+L0 4 16
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/store_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/store_extend.v|
+!i113 1
+R7
+R8
+R9
+vt1c_riscv_cpu
+R12
+!i10b 1
+!s100 12hHeojaG4:>?LNJngIMF2
+R2
+IoW391Ne=A]^EcVE;QHmR20
+R3
+R0
+w1759605278
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v
+!i122 0
+L0 4 25
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v|
+!i113 1
+R7
+R14
+R9
+vtb
+!s110 1759688781
+!i10b 1
+!s100 ^gaQzAWIn1dXAA;BJECHM2
+R2
+IA;jJT>jb^E]NYWj>b4?O>3
+R3
+R0
+w1759685333
+8D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/.test/tb.v
+FD:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/.test/tb.v
+!i122 17
+L0 3 533
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/.test|D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/.test/tb.v|
+!i113 1
+R7
+!s92 -vlog01compat -work work +incdir+D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/.test
+R9

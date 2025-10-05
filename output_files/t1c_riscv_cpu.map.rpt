@@ -1,0 +1,613 @@
+Analysis & Synthesis report for t1c_riscv_cpu
+Mon Oct 06 00:00:58 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg
+  6. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcadd4
+  7. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch
+  8. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:pcjalrmux
+  9. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:pcmux
+ 10. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf
+ 11. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux
+ 12. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|alu:alu
+ 13. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1
+ 14. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:auipcadd
+ 15. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:luipcmux
+ 16. Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux4:resultmux
+ 17. Parameter Settings for User Entity Instance: instr_mem:instrmem
+ 18. Parameter Settings for User Entity Instance: data_mem:datamem
+ 19. Port Connectivity Checks: "data_mem:datamem"
+ 20. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:luipcmux"
+ 21. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:auipcadd"
+ 22. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:pcjalrmux"
+ 23. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4"
+ 24. Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"
+ 25. Port Connectivity Checks: "riscv_cpu:rvcpu|controller:c|main_decoder:md"
+ 26. Port Connectivity Checks: "riscv_cpu:rvcpu|controller:c"
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Mon Oct 06 00:00:58 2025           ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; t1c_riscv_cpu                               ;
+; Top-level Entity Name              ; t1c_riscv_cpu                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; t1c_riscv_cpu      ; t1c_riscv_cpu      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcadd4 ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:pcaddbranch ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:pcjalrmux ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:pcmux ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|reg_file:rf ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:srcbmux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|alu:alu ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|adder:auipcadd ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux2:luipcmux ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: riscv_cpu:rvcpu|datapath:dp|mux4:resultmux ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instr_mem:instrmem ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                         ;
+; ADDR_WIDTH     ; 32    ; Signed Integer                         ;
+; MEM_SIZE       ; 512   ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_mem:datamem ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                       ;
+; ADDR_WIDTH     ; 32    ; Signed Integer                       ;
+; MEM_SIZE       ; 64    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_mem:datamem"                                                                                                                               ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; funct  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "funct[2..1]" will be connected to GND.  ;
+; funct7 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "funct7[6..1]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:luipcmux" ;
++-----------+-------+----------+----------------------------------------+
+; Port      ; Type  ; Severity ; Details                                ;
++-----------+-------+----------+----------------------------------------+
+; d1[11..0] ; Input ; Info     ; Stuck at GND                           ;
++-----------+-------+----------+----------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:auipcadd" ;
++----------+-------+----------+------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                  ;
++----------+-------+----------+------------------------------------------+
+; b[11..0] ; Input ; Info     ; Stuck at GND                             ;
++----------+-------+----------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|mux2:pcjalrmux"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" ;
++----------+-------+----------+----------------------------------------+
+; Port     ; Type  ; Severity ; Details                                ;
++----------+-------+----------+----------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                           ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                           ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                           ;
++----------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|datapath:dp"                                                                                                                  ;
++-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                       ;
++-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Store ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "Store[1..1]" will be connected to GND. ;
++-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|controller:c|main_decoder:md"                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; ALUR0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Zero  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "riscv_cpu:rvcpu|controller:c"                                                                                             ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+; Jump  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                      ;
+; Store ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "Store[1..1]" have no fanouts ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Oct 06 00:00:51 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t1c_riscv_cpu -c t1c_riscv_cpu
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file code/t1c_riscv_cpu.v
+    Info (12023): Found entity 1: t1c_riscv_cpu File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/riscv_cpu.v
+    Info (12023): Found entity 1: riscv_cpu File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/instr_mem.v
+    Info (12023): Found entity 1: instr_mem File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/data_mem.v
+    Info (12023): Found entity 1: data_mem File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/data_mem.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/reset_ff.v
+    Info (12023): Found entity 1: reset_ff File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reset_ff.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/reg_file.v
+    Info (12023): Found entity 1: reg_file File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/reg_file.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux4.v
+    Info (12023): Found entity 1: mux4 File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux3.v
+    Info (12023): Found entity 1: mux3 File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/mux2.v
+    Info (12023): Found entity 1: mux2 File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux2.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/main_decoder.v
+    Info (12023): Found entity 1: main_decoder File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/imm_extend.v
+    Info (12023): Found entity 1: imm_extend File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/imm_extend.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/datapath.v
+    Info (12023): Found entity 1: datapath File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/controller.v
+    Info (12023): Found entity 1: controller File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/alu_decoder.v
+    Info (12023): Found entity 1: alu_decoder File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/alu.v
+    Info (12023): Found entity 1: alu File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/adder.v
+    Info (12023): Found entity 1: adder File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/adder.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/store_extend.v
+    Info (12023): Found entity 1: store_extend File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/store_extend.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file code/components/load_extend.v
+    Info (12023): Found entity 1: load_extend File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/load_extend.v Line: 4
+Warning (10236): Verilog HDL Implicit Net warning at t1c_riscv_cpu.v(22): created implicit net for "funct" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at t1c_riscv_cpu.v(22): created implicit net for "funct7" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at riscv_cpu.v(23): created implicit net for "Store" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v Line: 23
+Info (12127): Elaborating entity "t1c_riscv_cpu" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at t1c_riscv_cpu.v(24): truncated value with size 32 to match size of target (1) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 24
+Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvcpu" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 20
+Info (12128): Elaborating entity "controller" for hierarchy "riscv_cpu:rvcpu|controller:c" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v Line: 23
+Info (12128): Elaborating entity "main_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|main_decoder:md" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v Line: 23
+Warning (10270): Verilog HDL Case Statement warning at main_decoder.v(22): incomplete case statement has no default case item File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 22
+Warning (10270): Verilog HDL Case Statement warning at main_decoder.v(31): incomplete case statement has no default case item File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 31
+Warning (10240): Verilog HDL Always Construct warning at main_decoder.v(19): inferring latch(es) for variable "controls", which holds its previous value in one or more paths through the always construct File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Warning (10030): Net "ALUR0" at main_decoder.v(8) has no driver or initial value, using a default initial value '0' File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 8
+Warning (10030): Net "Zero" at main_decoder.v(9) has no driver or initial value, using a default initial value '0' File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 9
+Info (10041): Inferred latch for "controls[0]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[1]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[2]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[3]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[4]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[5]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[6]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[7]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[8]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[9]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[10]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[11]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[12]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[13]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[14]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[15]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (10041): Inferred latch for "controls[16]" at main_decoder.v(19) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/main_decoder.v Line: 19
+Info (12128): Elaborating entity "alu_decoder" for hierarchy "riscv_cpu:rvcpu|controller:c|alu_decoder:ad" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/controller.v Line: 25
+Warning (10270): Verilog HDL Case Statement warning at alu_decoder.v(21): incomplete case statement has no default case item File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 21
+Warning (10240): Verilog HDL Always Construct warning at alu_decoder.v(13): inferring latch(es) for variable "ALUControl", which holds its previous value in one or more paths through the always construct File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[0]" at alu_decoder.v(13) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[1]" at alu_decoder.v(13) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[2]" at alu_decoder.v(13) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (10041): Inferred latch for "ALUControl[3]" at alu_decoder.v(13) File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/alu_decoder.v Line: 13
+Info (12128): Elaborating entity "datapath" for hierarchy "riscv_cpu:rvcpu|datapath:dp" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/riscv_cpu.v Line: 27
+Info (12128): Elaborating entity "reset_ff" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reset_ff:pcreg" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 27
+Info (12128): Elaborating entity "adder" for hierarchy "riscv_cpu:rvcpu|datapath:dp|adder:pcadd4" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 28
+Info (12128): Elaborating entity "mux2" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux2:pcjalrmux" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 30
+Info (12128): Elaborating entity "reg_file" for hierarchy "riscv_cpu:rvcpu|datapath:dp|reg_file:rf" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 34
+Info (12128): Elaborating entity "imm_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|imm_extend:ext" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 35
+Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvcpu|datapath:dp|alu:alu" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 39
+Info (12128): Elaborating entity "mux3" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 40
+Info (12128): Elaborating entity "load_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|load_extend:ldextd" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 43
+Info (12128): Elaborating entity "mux4" for hierarchy "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 48
+Info (12128): Elaborating entity "store_extend" for hierarchy "riscv_cpu:rvcpu|datapath:dp|store_extend:strextd" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 51
+Info (12128): Elaborating entity "instr_mem" for hierarchy "instr_mem:instrmem" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 21
+Warning (10850): Verilog HDL warning at instr_mem.v(14): number of words (79) in memory file does not match the number of elements in the address range [0:511] File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v Line: 14
+Warning (10030): Net "instr_ram.data_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v Line: 10
+Warning (10030): Net "instr_ram.waddr_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v Line: 10
+Warning (10030): Net "instr_ram.we_a" at instr_mem.v(10) has no driver or initial value, using a default initial value '0' File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/instr_mem.v Line: 10
+Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:datamem" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v Line: 22
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[31]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[31]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[31]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[31]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[30]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[30]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[30]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[30]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[29]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[29]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[29]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[29]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[28]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[28]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[28]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[28]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[27]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[27]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[27]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[27]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[26]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[26]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[26]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[26]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[25]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[25]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[25]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[25]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[24]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[24]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[24]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[24]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[23]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[23]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[23]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[23]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[22]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[22]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[22]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[22]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[21]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[21]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[21]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[21]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[20]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[20]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[20]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[20]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[19]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[19]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[19]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[19]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[18]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[18]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[18]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[18]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[17]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[17]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[17]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[17]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[16]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[16]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[16]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[16]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[15]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[15]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[15]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[15]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[14]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[14]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[14]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[14]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[13]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[13]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[13]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[13]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[12]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[12]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[12]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[12]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[11]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[11]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[11]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[11]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[10]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[10]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[10]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[10]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[9]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[9]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[9]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[9]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[8]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[8]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[8]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[8]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[7]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[7]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[7]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[7]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[6]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[6]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[6]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[6]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[5]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[5]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[5]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[5]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[4]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[4]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[4]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[4]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[3]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[3]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[3]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[3]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[2]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[2]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[2]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[2]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[1]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[1]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[1]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[1]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Error (12014): Net "riscv_cpu:rvcpu|datapath:dp|Result[0]", which fans out to "riscv_cpu:rvcpu|datapath:dp|reg_file:rf|wr_data[0]", cannot be assigned more than one value File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/datapath.v Line: 18
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux3:resultmux1|y[0]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux3.v Line: 8
+    Error (12015): Net is fed by "riscv_cpu:rvcpu|datapath:dp|mux4:resultmux|y[0]" File: D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/code/components/mux4.v Line: 8
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/output_files/t1c_riscv_cpu.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 96 errors, 17 warnings
+    Error: Peak virtual memory: 4727 megabytes
+    Error: Processing ended: Mon Oct 06 00:00:58 2025
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/windows/Intel/eyantra/task_1c/t1c_riscv_cpu/output_files/t1c_riscv_cpu.map.smsg.
+
+
