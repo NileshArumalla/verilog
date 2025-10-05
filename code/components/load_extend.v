@@ -18,6 +18,7 @@ always @(*) begin
     default: data = y;              
    
     endcase
+
 end
 
 endmodule

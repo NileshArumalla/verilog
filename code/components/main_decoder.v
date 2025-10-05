@@ -51,8 +51,8 @@ always @(*) begin
             3'b001:  Take_Branch = !Zero;
             3'b100:  Take_Branch = Zero;
             3'b101:  Take_Branch = !Zero;
-			3'b110:  Take_Branch = ALUR0;
-			3'b111:  Take_Branch = !ALUR0;
+			   3'b110:  Take_Branch = ALUR0;
+			   3'b111:  Take_Branch = !ALUR0;
             default: Take_Branch = 0;
         endcase
     end

@@ -30,8 +30,6 @@ always @(a, b, ALUControl) begin
 									 else
 										  alu_out <= 0;
 								end
-//                     if (a[31] != b[31]) alu_out <= a[31] ? 0 : 1;
-//                     else alu_out <= a < b ? 1 : 0;
                  end
 			4'b1111:begin
 					if ($unsigned(a) < $unsigned(b)) alu_out <= 1;
@@ -41,7 +39,8 @@ always @(a, b, ALUControl) begin
         4'b0111: alu_out <= a >> b[4:0];   // srl
         4'b0100: alu_out <= a << b[4:0];   // sll
         4'b1000: alu_out <= a >>> b[4:0];  // sra
-//		  4'b1001
+		  4'b1001: alu_out <= a >>> $unsigned(b[4:0]); //srai
+		  4'b1100:  alu_out <= (a >= b ? 1 : 0); //BGE
         default: alu_out = 0;
     endcase
 end

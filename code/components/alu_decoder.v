@@ -19,12 +19,13 @@ always @(*) begin
 					 end
         2'b01:begin 
             case (funct3) 
-            3'b110: ALUControl = 4'b0101; 
-            3'b101: ALUControl = 4'b1101;
-            3'b100: ALUControl = 4'b1101;
+            3'b110: ALUControl = 4'b1111; //bltu
+            3'b101: ALUControl = 4'b1100; //bge
+            3'b100: ALUControl = 4'b0101; //blt
              //  B-Type
-            3'b000: ALUControl = 4'b0001; 
-            3'b001: ALUControl = 4'b0001;
+            3'b000: ALUControl = 4'b0001; //beq
+            3'b001: ALUControl = 4'b0001; //bne
+				3'b111: ALUControl = 4'b1101; //bgeu
             endcase
         end            // subtraction
         default:
@@ -40,7 +41,10 @@ always @(*) begin
                 3'b011:  ALUControl = 4'b1111; // sltu, sltiu (doubtful)
                 3'b100:  ALUControl = 4'b0110; // xor, xori
                 3'b101: begin
-                    if (funct7b5) ALUControl = 4'b1000; // srai, sra
+                    if (funct7b5) begin
+								   if (!opb5)ALUControl = 4'b1000; // sra
+									else ALUControl = 4'b1001;// srai
+								end
                     else ALUControl = 4'b0111; 			// srl, srli
                 end
                 3'b111:  ALUControl = 4'b010; // and, and
